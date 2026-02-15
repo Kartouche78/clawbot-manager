@@ -1,4 +1,4 @@
-deploy.yamlname: Deploy K-Bot to Karakartal
+name: Deploy K-Bot to Karakartal
 
 on:
   push:
