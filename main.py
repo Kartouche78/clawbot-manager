@@ -3,7 +3,7 @@ from anthropic import Anthropic
 
 # Remplace par tes vraies clés
 TELEGRAM_TOKEN = "8599622285:AAFBlOVFlC056GaBmfQDx13cZjcUixJ8wcg"
-CLAUDE_KEY = "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"
+CLAUDE_KEY = os.environ.get("CLAUDE_KEY")
 
 bot = telebot.TeleBot(TELEGRAM_TOKEN)
 client = Anthropic(api_key=CLAUDE_KEY)
