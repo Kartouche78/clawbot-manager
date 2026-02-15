@@ -26,7 +26,10 @@ jobs:
           tags: ghcr.io/${{ github.repository }}/k-bot:latest
 
       - name: Deploy to Kubernetes
-        uses: steebchen/kubectl-gha@v1
+        uses: azure/k8s-set-context@v3
         with:
-          config: ${{ secrets.KUBECONFIG_DATA }}
-          command: apply -f kbot.yaml
+          method: kubeconfig
+          kubeconfig: ${{ secrets.KUBECONFIG_DATA }}
+
+      - name: Apply Kubernetes manifests
+        run: kubectl apply -f kbot.yaml
