@@ -23,7 +23,8 @@ jobs:
         with:
           context: .
           push: true
-          tags: ghcr.io/${{ github.repository }}/k-bot:latest
+          # Le nom est en minuscules pour Docker
+          tags: ghcr.io/kartouche78/clawbot-manager/k-bot:latest
 
       - name: Deploy to Kubernetes
         uses: azure/k8s-set-context@v3
